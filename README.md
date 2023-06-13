@@ -29,7 +29,7 @@ pip install Flask Flask-Cors pyinstaller
  ```sh
  binaries=[('<path-to-openvino-package-in-env>\\libs\\*', '.\\openvino\\libs')],
  datas=[('<path-to-music_source_separation-model>\\*', '.\\music_source_separation\\model'),
-		('<path-to-librosa-package-in-env>\\util\\example_data\\*', '.\\librosa\\util\\example_data'),
+        ('<path-to-librosa-package-in-env>\\util\\example_data\\*', '.\\librosa\\util\\example_data'),
 		('<path-to-music_transcription-model>\\basic_pitch_43844_model.onnx', '.\\music_transcription')],
  hiddenimports=['openvino.pyopenvino', 'openvino.inference_engine.constants'],
  ```
