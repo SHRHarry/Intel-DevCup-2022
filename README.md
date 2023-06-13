@@ -18,7 +18,7 @@ pip install pytube==12.1.3 pytube3==9.6.4
 pip install git+https://github.com/vishnubob/python-midi@feature/python3
 ```
 
-## Run without environemnt (pyinstaller)
+## Run without environment (pyinstaller)
 
  - To package it into an exe file, please follow the steps below:
 ```sh
