@@ -25,7 +25,7 @@ pip install git+https://github.com/vishnubob/python-midi@feature/python3
 pip install Flask Flask-Cors pyinstaller
 ```
 
- - Modify the path in binary, data, and hiddenimports:
+ - Modify the path in binary, data, and hiddenimports in build.spec:
  ```sh
  binaries=[('<path-to-openvino-package-in-env>\\libs\\*', '.\\openvino\\libs')],
  datas=[('<path-to-music_source_separation-model>\\*', '.\\music_source_separation\\model'),
