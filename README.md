@@ -44,4 +44,4 @@ pip install Flask Flask-Cors pyinstaller
 
 ## References
 
-+ https://github.com/NielsRogge/Transformers-Tutorials/blob/master/SegFormer/Fine_tune_SegFormer_on_custom_dataset.ipynb
++ https://github.com/FanChiMao/Competition-2022-OpenVINO-Devcup
