@@ -1,6 +1,6 @@
 # Intel-DevCup-2022-Cyber-Audio
 
-[![Competition](https://img.shields.io/badge/Intel-DevCup-Competition-blue)](https://makerpro.cc/intel-devcup/)
+[![Competition](https://img.shields.io/badge/Intel--DevCup-Competition-blue)](https://makerpro.cc/intel-devcup/)
 [![OpenVINO](https://img.shields.io/badge/Intel-OpenVINO-blue)](https://www.intel.com/content/www/us/en/developer/tools/openvino-toolkit/overview.html)
 ## Introduction
 
