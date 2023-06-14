@@ -23,7 +23,7 @@ pip install git+https://github.com/vishnubob/python-midi@feature/python3
 
 ## Run without environment (pyinstaller)
 
- - To package it into an exe file, please follow the steps below:
+ - To package it into an exe file, please install the dependencies with:
 ```sh
 pip install Flask Flask-Cors pyinstaller
 ```
