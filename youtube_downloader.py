@@ -7,7 +7,8 @@ Created on Mon Nov 21 15:01:48 2022
 
 import os
 import argparse
-from pytube import YouTube
+from pytubefix import YouTube
+from pytubefix.cli import on_progress
 from pydub import AudioSegment
 
 def parser():
@@ -16,10 +17,17 @@ def parser():
     parser.add_argument('mp3_dir', metavar='DIR', help='path to mp3')
     return parser.parse_args()
 
+# def download_mp3(url, save_path):
+#     yt = YouTube(url)
+#     mp3_path = os.path.join(save_path, yt.title+".mp3")
+#     yt.streams.get_audio_only().download(filename=mp3_path)
+#     return mp3_path
+
 def download_mp3(url, save_path):
-    yt = YouTube(url)
-    mp3_path = os.path.join(save_path, yt.title+".mp3")
-    yt.streams.get_audio_only().download(filename=mp3_path)
+    yt = YouTube(url, on_progress_callback = on_progress)
+    mp3_path = os.path.join(save_path, yt.title)
+    ys = yt.streams.get_audio_only()
+    ys.download(mp3=True, filename=mp3_path)
     return mp3_path
 
 def mp3_to_wav(mp3_path, wav_path):

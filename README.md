@@ -8,15 +8,16 @@ This repo is a service built based on [Competition-2022-OpenVINO-Devcup](https:/
 
 ## Installation
 
- - For downloading audio sources from youtube, please install the dependencies with:
-```sh
-pip install pytube==12.1.3 pytube3==9.6.4
-```
-
  - For mixing midi, please install the dependencies with:
  ```sh
 pip install git+https://github.com/vishnubob/python-midi@feature/python3
 ```
+
+ - Please install the dependencies with:
+```sh
+pip install -r requirements.txt
+```
+
 
  - For export music sheet as image (.png), please install [MuseScore3](https://ftp.osuosl.org/pub/musescore/releases/MuseScore-3.2/Musescore-3.2.0-x86_64.msi)
  
@@ -49,7 +50,7 @@ pip install Flask Flask-Cors pyinstaller
  ```
 
 ## TODO
- - UI for the service
+ - Web UI for the service
 
 ## References
 

@@ -1,13 +1,6 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Sun Jun 11 01:09:48 2023
-
-@author: ms024
-"""
-
 import youtube_downloader as downloader
-import music_source_separation.run_umx_openvino as separater
-import music_transcription.openvino_inference as transcripter
+import music_source_separation.umx_openvino.run_umx_openvino as separater
+import music_transcription.basic_pitch.openvino_inference as transcripter
 import midi_merge as merge
 
 import os
@@ -34,8 +27,7 @@ def post_youtube_download():
     mp3_dir = insert_val['mp3_dir']
 
     mp3_path = downloader.download_mp3(url, mp3_dir)
-    wav_path = mp3_path.replace(".mp3", ".wav")
-    download_status = downloader.mp3_to_wav(mp3_path, wav_path)
+    download_status = downloader.mp3_to_wav(mp3_path+".mp3", mp3_path+".wav")
 
     return jsonify({'download_status': str(download_status)})
 
@@ -49,9 +41,10 @@ def post_separate_music():
     
     sep_stat = False
     try:
-        separater.run_separate(input_file, output_dir)
+        separater.music_source_separation(input_file, output_dir, None)
         sep_stat = True
-    except:
+    except Exception as e:
+        print(e)
         sep_stat = False
     
     return jsonify({'sep_status': str(sep_stat)})
@@ -64,9 +57,10 @@ def post_transcript_music():
     output_dir = insert_val['output_dir']
     transcript_stat = False
     try:
-        transcripter.inference(input_audio=input_file, model_onnx='./music_transcription/basic_pitch_43844_model.onnx', save_dictionary=output_dir)
+        transcripter.music_transcription(input_audio=input_file, model_onnx='./music_transcription/models/basic_pitch_43844_model.onnx', save_dictionary=output_dir)
         transcript_stat = True
-    except:
+    except Exception as e:
+        print(e)
         transcript_stat = False
     
     return jsonify({'transcript_status': str(transcript_stat)})

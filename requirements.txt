@@ -1,0 +1,16 @@
+Flask==3.0.3
+Flask_Cors==5.0.0
+openunmix
+librosa==0.10.2.post1
+openvino==2022.2.0
+openvino_dev==2022.2.0
+pretty_midi==0.2.10
+pydub==0.25.1
+pytubefix==6.16.1
+resampy==0.4.3
+scipy==1.5.4
+tensorflow==2.13.0
+termcolor==2.4.0
+tqdm==4.66.5
+numpy==1.23.1
+mir_eval==0.7
